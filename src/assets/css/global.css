@@ -2,26 +2,48 @@
 html,
 body,
 #app {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    min-width: 1366px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 1366px;
 }
 
 .el-breadcrumb {
-    margin-bottom: 15px;
-    font-size: 12px;
+  margin-bottom: 15px;
+  font-size: 12px;
 }
 
 .el-card {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
 }
 
 .el-table {
-    margin-top: 15px;
-    font-size: 12px;
+  margin-top: 15px;
+  font-size: 12px;
 }
 
 .el-pagination {
-    margin-top: 15px;
+  margin-top: 15px;
+}
+
+/* element-ui 中el-cascader中选项框高度不正常显示 */
+/* 在全局样式中添加 */
+.el-cascader-panel {
+  height: 250px;
+}
+/* Element-Cascader 级联选择器check-strictly为true时，单选区域的优化 */
+/* 使用单选选择任意一级选项使用此属性时 :props="{ checkStrictly: true }"时，默认的选择区域只有radio一个小圆圈，点击选项文字无效的。 */
+.el-cascader-menu .el-radio {
+  display: table;
+  vertical-align: middle;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  margin-left: -20px;
+  padding-left: 10px;
+}
+.el-cascader-menu .el-radio .el-radio__input {
+  display: table-cell;
+  vertical-align: middle;
 }
