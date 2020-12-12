@@ -276,7 +276,6 @@ export default {
         // 文本框中输入的值
         item.inputValue = ''
       })
-
       if (this.activeName === 'many') {
         this.manyTableData = res.data
       } else {
@@ -308,7 +307,6 @@ export default {
     async showEditDialog (attr_id) {
       // 查询当前参数的信息
       const { data: res } = await this.$http.get(`categories/${this.cateId}/attributes/${attr_id}`, { params: { attr_sel: this.activeName } })
-
       if (res.meta.status !== 200) {
         return this.$message.error('获取参数信息失败！')
       }
@@ -395,7 +393,6 @@ export default {
       row.attr_vals.splice(i, 1)
       this.saveAttrVals(row)
     }
-
   },
   computed: {
     // 如果按钮需要被禁用，则返回true， 否则返回false
