@@ -78,11 +78,13 @@
           <!-- options用来指定数据源 -->
           <!-- props用来指定配置对象 -->
           <el-cascader
-            v-model="selectedKeys"
+            expand-trigger="hover"
             :options="parentCateList"
             :props="cascaderProps"
+            v-model="selectedKeys"
             @change="parentCateChanged"
             clearable
+            change-on-select
           ></el-cascader>
         </el-form-item>
       </el-form>
@@ -153,9 +155,7 @@ export default {
       cascaderProps: {
         value: 'cat_id',
         label: 'cat_name',
-        children: 'children',
-        checkStrictly: true,
-        expandTrigger: 'hover'
+        children: 'children'
       },
       // 选中的父级分类的id数组
       selectedKeys: []
