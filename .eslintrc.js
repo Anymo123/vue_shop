@@ -8,6 +8,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
+    "space-before-function-paren": 0,
     // Vue检测报错Identifier is not a camel case (camelcase)  允许非驼峰   下划线
     "camelcase": 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
